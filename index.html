@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>商品卡翻译服务 / Product Listing Translation Service</title>
+  <style>
+    :root {
+      --main-color: #2c3e50;
+      --accent-color: #3498db;
+      --light-bg: #f9f9f9;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: var(--light-bg);
+      color: var(--main-color);
+      line-height: 1.6;
+    }
+
+    .tabs {
+      display: flex;
+      justify-content: center;
+      background: white;
+      border-bottom: 1px solid #ddd;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+
+    .tab {
+      padding: 1em 2em;
+      cursor: pointer;
+      font-weight: bold;
+      color: var(--main-color);
+      transition: background 0.3s;
+    }
+
+    .tab.active {
+      background: var(--light-bg);
+      border-bottom: 2px solid var(--accent-color);
+      color: var(--accent-color);
+    }
+
+    .section {
+      max-width: 700px;
+      margin: 2em auto;
+      padding: 0 1.5em;
+      display: none;
+      animation: fadeIn 0.3s ease-in;
+    }
+
+    .section.active {
+      display: block;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 1.8em;
+      margin-bottom: 1em;
+      color: var(--accent-color);
+    }
+
+    h2 {
+      margin-top: 1.5em;
+      color: var(--main-color);
+    }
+
+    ul, ol {
+      margin: 1em 0 1.5em 1.2em;
+    }
+
+    button {
+      padding: 0.75em 1.5em;
+      font-size: 1em;
+      background: var(--accent-color);
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background: #217dbb;
+    }
+
+    .footer {
+      font-size: 0.9em;
+      color: #888;
+      text-align: center;
+      margin: 4em 0 1em;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+  </style>
+</head>
+<body>
+  <div class="tabs">
+    <div class="tab active" onclick="switchTab('zh')">中文</div>
+    <div class="tab" onclick="switchTab('en')">EN</div>
+  </div>
+
+  <div class="section active" id="zh">
+    <h1>商品卡翻译服务</h1>
+    <h2>服务内容</h2>
+    <ul>
+      <li>中译俄人工翻译：商品描述、参数及图片文字的人工专业翻译</li>
+      <li>图片文字本地化：去除图片中的中文并替换为精准的俄文翻译</li>
+      <li>翻译质量审校：审核并优化现有翻译，确保其准确性与流畅性</li>
+    </ul>
+    <h2>如何订购</h2>
+    <ol>
+      <li>发送商品链接或文件</li>
+      <li>收到报价并完成付款</li>
+      <li>获取最终翻译内容</li>
+    </ol>
+    <p style="text-align: center;"><button onclick="location.href='mailto:shuvaevpi@gmail.com?subject=%E8%AF%91%E6%96%87%E7%94%B3%E8%AF%B7'">发送请求</button></p>
+    <div class="footer">我们提供专业的中俄商品翻译服务，涵盖图片本地化与翻译审校。</div>
+  </div>
+
+  <div class="section" id="en">
+    <h1>Product Listing Translation Service</h1>
+    <h2>Services</h2>
+    <ul>
+      <li>Chinese to Russian Translation: Manual translation of product descriptions, specifications, and image-based text</li>
+      <li>Image Text Localization: Remove Chinese text from images and replace it with accurate Russian translations</li>
+      <li>Translation Quality Check: Review and improve existing translations for accuracy and fluency</li>
+    </ul>
+    <h2>How to Order</h2>
+    <ol>
+      <li>Send links or files with product listings</li>
+      <li>Get a quote and confirm payment</li>
+      <li>Receive the completed translation</li>
+    </ol>
+    <p style="text-align: center;"><button onclick="location.href='mailto:shuvaevpi@gmail.com?subject=TRANSLATION%20REQUEST'">Send Request</button></p>
+    <div class="footer">We offer expert Chinese-to-Russian translation for e-commerce, including image localization and quality review.</div>
+  </div>
+
+  <script>
+    function switchTab(lang) {
+      document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+      document.querySelector('.tab[onclick*="' + lang + '"]').classList.add('active');
+      document.getElementById(lang).classList.add('active');
+    }
+  </script>
+</body>
+</html>
